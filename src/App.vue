@@ -1,20 +1,17 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div class="d-flex sp flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white  justify-content-between">
+      <router-link to="Home" class="" >Vue Mini Project</router-link>
+      <nav>
+        <router-link to="/product" >Project management</router-link>
+        <router-link to="/user">User management</router-link>
+      </nav>
+      <a class="btn btn-outline-primary" routerlink="cart">Administrator</a>
+    </div>
+   
+    <router-view/>
   </div>
 </template>
-
-<script>
-import HelloWorld from './components/HelloWorld.vue'
-
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
-</script>
 
 <style>
 #app {
@@ -23,6 +20,20 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
+
+nav {
+  padding: 30px;
+}
+
+nav a {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+nav a.router-link-exact-active {
+  color: #42b983;
+  padding: 10px 20px;
+}
+
 </style>
